@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+* {
+  letter-spacing: -0.05em;
+  outline: none;
+}
+
+body {
+  font-family: Inter, sans-serif;
+}
+
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.animate-fill {
+  animation: animateFill 5s;
+}
+
+input:focus {
+  border-color: #4a90e2; 
+  outline: none; /* Removes default browser outline */
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3); /* Optional glow effect */
+}
+
+@keyframes animateFill {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
