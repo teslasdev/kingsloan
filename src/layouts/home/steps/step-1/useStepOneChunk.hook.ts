@@ -1,7 +1,7 @@
 import { z } from "zod";
 import { useForm } from "../../../../utils/hooks/useForm.hook";
 
-export const useStepOneChunk = () => {
+export const useStepOneChunk = (props : any) => {
   const loanPurposeOptions = [
     {
       id: "purpose-debt",
@@ -62,8 +62,13 @@ export const useStepOneChunk = () => {
     }),
     async onSubmit(formData) {
       console.log(formData);
+      props.p.setStep(props.p.step + 1)
     },
   });
+
+  const handlePrevious = () => {
+    props.p.setStep(props.p.step - 1)
+  }
 
   const isFormEmpty = Object.values(form.formData).every(value => value === "");
 
@@ -76,6 +81,7 @@ export const useStepOneChunk = () => {
     form,
     isFormEmpty,
     calcInt,
-    repaymentAmount
+    repaymentAmount,
+    handlePrevious
   };
 };

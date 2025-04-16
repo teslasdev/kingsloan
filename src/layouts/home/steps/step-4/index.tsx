@@ -1,7 +1,6 @@
-import { Button } from "../../../components/buttons/Buttons";
-import { TextInput } from "../../../components/Inputs/TextInput";
-import SelectInput from "../../../components/selects/select-input/SelectInput";
-import { InputChangePayload } from "../../../utils/types/index.types";
+import { TextInput } from "../../../../components/Inputs/TextInput";
+import SelectInput from "../../../../components/selects/select-input/SelectInput";
+
 
 const Step4 = () => {
   return (
@@ -30,6 +29,8 @@ const Step4 = () => {
             placeholder="Select employment status"
             name=""
             options={[]}
+            value={""}
+            onChange={() => {}}
           />
           <div className="flex items-center gap-4">
             <TextInput
@@ -37,18 +38,14 @@ const Step4 = () => {
               value={""}
               placeholder="Enter name"
               label={"Organisation/company name"}
-              onChange={function (payload: InputChangePayload): void {
-                throw new Error("Function not implemented.");
-              }}
+              onChange={() => {}}
             />
             <TextInput
               name={""}
               value={""}
               placeholder="Name of business"
               label={"Enter business name"}
-              onChange={function (payload: InputChangePayload): void {
-                throw new Error("Function not implemented.");
-              }}
+              onChange={() => {}}
             />
           </div>
 
@@ -58,18 +55,14 @@ const Step4 = () => {
               value={""}
               placeholder="Enter Role"
               label={"Position/role"}
-              onChange={function (payload: InputChangePayload): void {
-                throw new Error("Function not implemented.");
-              }}
+              onChange={() => {}}
             />
             <TextInput
               name={""}
               value={""}
               placeholder="Work email address"
               label={"Enter Work email address"}
-              onChange={function (payload: InputChangePayload): void {
-                throw new Error("Function not implemented.");
-              }}
+              onChange={() => {}}
             />
           </div>
         </div>

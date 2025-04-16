@@ -13,7 +13,7 @@ const Layout = ({ children }: LayoutProps) => {
       <header className="sticky w-full top-0 z-50">
         <Header />
       </header>
-      <main className="w-full  h-full">{children}</main>
+      <main className="w-full h-full">{children}</main>
     </div>
   );
 };

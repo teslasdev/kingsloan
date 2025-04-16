@@ -3,11 +3,11 @@ import { TextInput } from "../../../../components/Inputs/TextInput";
 import SelectInput from "../../../../components/selects/select-input/SelectInput";
 import { useStepOneChunk } from "./useStepOneChunk.hook";
 
-const Step1 = () => {
-  const p = useStepOneChunk();
+const Step1 = (props: any) => {
+  const p = useStepOneChunk(props);
   return (
     <form onSubmit={p.form.handleSubmit}>
-      <div className="flex items-center justify-center lg:max-w-[1200px] w-full min-h-[80vh] p-4">
+      <div className="flex items-center justify-center mx-auto max-w-[1200px] w-full min-h-[80vh] p-4">
         <div
           className={`md:w-[846px] w-full min-h-[516px] p-6 bg-white shadow-lg rounded-[20px] flex flex-col transition-transform duration-500 border border-[#D7D7D780]`}
         >

@@ -18,7 +18,7 @@ export default function useSelectInput(props: SelectInputProps) {
     if (!props.comboBox) return;
 
     if (!__selected) {
-      const searchResult = props.options?.filter((opt) =>
+      const searchResult = props.options?.filter((opt : any) =>
         opt.name.toLowerCase().includes(props.value?.toString().toLowerCase())
       );
       setOptions(searchResult ?? []);
@@ -28,7 +28,7 @@ export default function useSelectInput(props: SelectInputProps) {
   }, [props.value]);
 
   function getInputOption(value: string) {
-    return props.options?.find((option) => String(option.id) === value);
+    return props.options?.find((option : any) => String(option.id) === value);
   }
 
   function handleClearSelection() {
