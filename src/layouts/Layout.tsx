@@ -9,11 +9,11 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className="min-h-screen w-[100vw] flex flex-col">
+    <div className="min-h-screen  flex flex-col overflow-x-hidden">
       <header className="sticky w-full top-0 z-50">
         <Header />
       </header>
-      <main className="w-full h-full">{children}</main>
+      <main className="w-full h-full ">{children}</main>
     </div>
   );
 };

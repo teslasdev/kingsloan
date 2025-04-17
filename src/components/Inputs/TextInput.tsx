@@ -27,6 +27,7 @@ export function TextInput(props: TextInputProps) {
     handleChange,
     parentRef,
   } = useTextInput(props);
+  
 
   return (
     <div ref={parentRef} className="w-full">
@@ -38,7 +39,7 @@ export function TextInput(props: TextInputProps) {
       </label>
       <div
         className={
-          "relative h-[60px] rounded-xl border bg-accent-6 bg-opacity-30 text-sm overflow-hidden border-[#D7D7D7] flex items-center"
+          `relative h-[60px] rounded-xl border bg-accent-6 bg-opacity-30 text-sm overflow-hidden flex items-center ${props.value ? 'border-[#14961D80]' : 'border-[#D7D7D7]'}`
         }
       >
         {iconLeft && (
