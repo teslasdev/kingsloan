@@ -34,7 +34,10 @@ const Step4 = (props: any) => {
               name={h.form.fieldNames.employmentStatus}
               value={h.form.formData.employmentStatus}
               options={h.jobApplicationStatusOptions}
-              onChange={h.form.handleChange}
+              onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
               validation={h.form.validationSchema?.employmentStatus}
               validationTrigger={h.form.validationError}
             />
@@ -44,7 +47,10 @@ const Step4 = (props: any) => {
                 value={h.form.formData.companyName}
                 placeholder="Enter name"
                 label={"Organisation/company name"}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.companyName}
                 validationTrigger={h.form.validationError}
               />
@@ -53,7 +59,10 @@ const Step4 = (props: any) => {
                 value={h.form.formData.businessName}
                 placeholder="Name of business"
                 label={"Enter business name"}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.businessName}
                 validationTrigger={h.form.validationError}
               />
@@ -61,12 +70,15 @@ const Step4 = (props: any) => {
 
             <div className="flex items-center gap-4">
               <TextInput
-                name={h.form.fieldNames.position}
-                value={h.form.formData.position}
+                name={h.form.fieldNames.role}
+                value={h.form.formData.role}
                 placeholder="Enter Role"
                 label={"Position/role"}
-                onChange={h.form.handleChange}
-                validation={h.form.validationSchema?.position}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
+                validation={h.form.validationSchema?.role}
                 validationTrigger={h.form.validationError}
               />
               <TextInput
@@ -74,7 +86,10 @@ const Step4 = (props: any) => {
                 value={h.form.formData.workEmail}
                 placeholder="Work email address"
                 label={"Enter Work email address"}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.workEmail}
                 validationTrigger={h.form.validationError}
               />

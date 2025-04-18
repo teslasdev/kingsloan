@@ -16,14 +16,14 @@ export const useStepFourChunk = (props: any) => {
       employmentStatus: "",
       companyName: "",
       businessName: "",
-      position: "",
+      role: "",
       workEmail: "",
     },
     validationSchema: z.object({
       employmentStatus: z.string().nonempty("Employment status is required"),
       companyName: z.string().nonempty("Company name is required"),
       businessName: z.string().nonempty("Business name is required"),
-      position: z.string().nonempty("Position is required"),
+      role: z.string().nonempty("Position is required"),
       workEmail: z.string().email("Invalid work email address"),
     }),
     async onSubmit(formData) {

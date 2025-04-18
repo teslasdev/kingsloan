@@ -46,3 +46,48 @@ export type subMenuItem = {
   }
 }
 
+
+
+// src/features/loanApplication/types.ts
+export type Gender = 'male' | 'female' | 'other';
+
+
+export interface Referee {
+  name: string;
+  relationship: string;
+  phoneNumber: string;
+  email: string;
+}
+
+export interface LoanApplicationState {
+  loanAmount: number;
+  loanPurpose: string;
+  durationInMonths: number;
+  firstName: string;
+  lastName: string;
+  dateOfBirth: string;
+  gender: Gender;
+  maritalStatus: string;
+  idType: string;
+  documentId: string;
+  email: string;
+  phoneNumber: string;
+  addressNumber: string;
+  fullAddress: string;
+  referees: Referee[];
+  employmentStatus: string;
+  companyName: string;
+  businessName: string;
+  role: string;
+  workEmail: string;
+  bvn: string;
+  accountNumber: string;
+  bankName: string;
+}
+
+export type UpdateRefereePayload = {
+  index: number;
+  data: Partial<Referee>;
+};
+
+export type UpdateApplicationPayload = Partial<LoanApplicationState>;

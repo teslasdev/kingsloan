@@ -1,8 +1,11 @@
 import { z } from "zod";
 import { useForm } from "../../../../utils/hooks/useForm.hook";
 import { ListItem } from "../../../../utils/types/index.types";
+import { useState } from "react";
+import axios from "axios";
 
 export const useStepFiveChunk = (props: any) => {
+  const [isLoading, setIsLoading] = useState(false);
   const nigeriaBankOptions: ListItem[] = [
     { id: "access_bank", name: "Access Bank" },
     { id: "citibank", name: "Citibank Nigeria" },
@@ -27,31 +30,57 @@ export const useStepFiveChunk = (props: any) => {
     { id: "globus_bank", name: "Globus Bank" },
     { id: "titan_trust", name: "Titan Trust Bank" },
     { id: "jaiz_bank", name: "Jaiz Bank (Islamic Bank)" },
-    { id: "other", name: "Other Bank" }
+    { id: "other", name: "Other Bank" },
   ];
+
   const form = useForm({
     initialFormData: {
       bvn: "",
       bankName: "",
       accountNumber: "",
-      accountName: "",
-      acceptTerms: false,
+      acceptTerms: true,
     },
     validationSchema: z.object({
       bvn: z.string().nonempty("BVN is required"),
       bankName: z.string().nonempty("Bank name is required"),
       accountNumber: z.string().nonempty("Account number is required"),
-      accountName: z.string().nonempty("Account name is required"),
       acceptTerms: z.boolean().refine((val) => val === true, {
         message: "You must accept the terms and conditions",
       }),
     }),
     async onSubmit(formData) {
-      console.log(formData);
-      props.p.setStep(props.p.step + 1);
+      setIsLoading(true);
+
+      try {
+        console.log("Submitting:", formData);
+
+        // Simulate API call with Axios
+        const response = await axios.post(
+          "https://loan-api.umetech.io/api/loan/apply",
+          props.p.application,
+          {
+            onUploadProgress: (progressEvent) => {
+              // You can use this to show actual upload progress if needed
+              const progress = progressEvent.total
+                ? Math.round((progressEvent.loaded * 100) / progressEvent.total)
+                : 0;
+              console.log(`Upload progress: ${progress}%`);
+            },
+          }
+        );
+
+        console.log("Submission successful:", response.data);
+      } catch (error) {
+        console.error("Submission failed:", error);
+        // Handle error (show error message, etc.)
+      } finally {
+        setIsLoading(false);
+      }
     },
   });
 
+  console.log(form.formData);
+  console.log(form.validationError);
   const handlePrevious = () => {
     props.p.setStep(props.p.step - 1);
   };
@@ -60,5 +89,6 @@ export const useStepFiveChunk = (props: any) => {
     form,
     handlePrevious,
     nigeriaBankOptions,
+    isLoading,
   };
 };

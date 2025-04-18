@@ -3,6 +3,7 @@ import { Button } from "../../../../components/buttons/Buttons";
 import { TextInput } from "../../../../components/Inputs/TextInput";
 import SelectInput from "../../../../components/selects/select-input/SelectInput";
 import { useStepThreeChunk } from "./useStepThreeChunk.hook";
+import { InputChangePayload } from "../../../../utils/types/index.types";
 
 const Step3 = (props: any) => {
   const h = useStepThreeChunk(props);
@@ -30,12 +31,15 @@ const Step3 = (props: any) => {
           <div className="flex flex-col gap-4">
             <div className="flex items-center gap-4">
               <TextInput
-                name={h.form.fieldNames.emailAddress}
-                value={h.form.formData.emailAddress}
+                name={h.form.fieldNames.email}
+                value={h.form.formData.email}
                 placeholder="Enter address"
                 label={"Email address"}
-                onChange={h.form.handleChange}
-                validation={h.form.validationSchema?.emailAddress}
+                onChange={(e) => {
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
+                validation={h.form.validationSchema?.email}
                 validationTrigger={h.form.validationError}
               />
               <TextInput
@@ -43,7 +47,10 @@ const Step3 = (props: any) => {
                 value={h.form.formData.phoneNumber}
                 placeholder="Enter Phone number"
                 label={"Phone number"}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.phoneNumber}
                 validationTrigger={h.form.validationError}
               />
@@ -53,10 +60,13 @@ const Step3 = (props: any) => {
                 <TextInput
                   label="House number"
                   placeholder="Day"
-                  name={h.form.fieldNames.houseNumber}
-                  value={h.form.formData.houseNumber}
-                  onChange={h.form.handleChange}
-                  validation={h.form.validationSchema?.houseNumber}
+                  name={h.form.fieldNames.addressNumber}
+                  value={h.form.formData.addressNumber}
+                  onChange={(e) => {
+                    h.form.handleChange(e);
+                    props.p.handleChange(e);
+                  }}
+                  validation={h.form.validationSchema?.addressNumber}
                   validationTrigger={h.form.validationError}
                 />
               </div>
@@ -66,7 +76,10 @@ const Step3 = (props: any) => {
                 placeholder="Enter full Address"
                 name={h.form.fieldNames.fullAddress}
                 value={h.form.formData.fullAddress}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.fullAddress}
                 validationTrigger={h.form.validationError}
               />
@@ -103,7 +116,10 @@ const Step3 = (props: any) => {
                   placeholder="Select Relationship"
                   name={h.form.fieldNames.referee1Relationship}
                   value={h.form.formData.referee1Relationship}
-                  onChange={h.form.handleChange}
+                  onChange={(e : InputChangePayload) => {
+                    h.form.handleChange(e);
+                    props.p.handleRefereeChange(0 , { field :  "relationship" , value : e.value });
+                  }}
                   validation={h.form.validationSchema?.referee1Relationship}
                   validationTrigger={h.form.validationError}
                   options={h.relationshipOptions}
@@ -113,7 +129,10 @@ const Step3 = (props: any) => {
                   placeholder="Enter Phone number"
                   name={h.form.fieldNames.referee1PhoneNumber}
                   value={h.form.formData.referee1PhoneNumber}
-                  onChange={h.form.handleChange}
+                  onChange={(e : InputChangePayload) => {
+                    h.form.handleChange(e);
+                    props.p.handleRefereeChange(0 , { field :  "phoneNumber" , value : e.value });
+                  }}
                   validation={h.form.validationSchema?.referee1PhoneNumber}
                   validationTrigger={h.form.validationError}
                 />
@@ -151,7 +170,10 @@ const Step3 = (props: any) => {
                   placeholder="Select Relationship"
                   name={h.form.fieldNames.referee2Relationship}
                   value={h.form.formData.referee2Relationship}
-                  onChange={h.form.handleChange}
+                  onChange={(e : InputChangePayload) => {
+                    h.form.handleChange(e);
+                    props.p.handleRefereeChange(1 , { field :  "relationship" , value : e.value });
+                  }}
                   validation={h.form.validationSchema?.referee2Relationship}
                   validationTrigger={h.form.validationError}
                   options={h.relationshipOptions}
@@ -161,7 +183,10 @@ const Step3 = (props: any) => {
                   placeholder="Enter Phone number"
                   name={h.form.fieldNames.referee2PhoneNumber}
                   value={h.form.formData.referee2PhoneNumber}
-                  onChange={h.form.handleChange}
+                  onChange={(e : InputChangePayload) => {
+                    h.form.handleChange(e);
+                    props.p.handleRefereeChange(1 , { field :  "phoneNumber" , value : e.value });
+                  }}
                   validation={h.form.validationSchema?.referee2PhoneNumber}
                   validationTrigger={h.form.validationError}
                 />

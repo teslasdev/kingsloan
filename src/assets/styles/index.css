@@ -23,7 +23,7 @@ body {
 }
 
 input:focus {
-  border-color: #4a90e2; 
+  border-color: #14961D; 
   outline: none; /* Removes default browser outline */
   box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.3); /* Optional glow effect */
 }
@@ -34,5 +34,47 @@ input:focus {
   }
   to {
     transform: translateX(0%);
+  }
+}
+
+
+/* ProgressLoader.css */
+.progress-loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: transparent;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 6px;
+}
+
+.progress-loader.active {
+  opacity: 1;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: #14961D;
+  transition: width 0.4s ease;
+  animation: progress 2s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
   }
 }

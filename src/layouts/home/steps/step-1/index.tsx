@@ -1,5 +1,6 @@
 import { Button } from "../../../../components/buttons/Buttons";
 import { TextInput } from "../../../../components/Inputs/TextInput";
+import ProgressLoader from "../../../../components/Loader";
 import SelectInput from "../../../../components/selects/select-input/SelectInput";
 import { useStepOneChunk } from "./useStepOneChunk.hook";
 
@@ -9,13 +10,18 @@ const Step1 = (props: any) => {
     <form onSubmit={p.form.handleSubmit}>
       <div className="flex items-center justify-center mx-auto max-w-[1200px] w-full min-h-[80vh] p-4">
         <div
-          className={`md:w-[846px] w-full min-h-[516px] p-6 bg-white shadow-lg rounded-[20px] flex flex-col transition-transform duration-500 border border-[#D7D7D780]`}
+          className={`md:w-[846px] relative w-full min-h-[516px] p-6 bg-white shadow-lg rounded-[20px] flex flex-col transition-transform duration-500 border border-[#D7D7D780]`}
         >
+          {p.isLoading && (
+            <div className="absolute inset-0 w-full h-full z-30 backdrop-blur-xs rounded-md">
+              <ProgressLoader isLoading={p.isLoading} />
+            </div>
+          )}
           <h1 className="text-[24px] text-[#083B0B] font-[600]">
             How much do you want to loan?
           </h1>
           <p className="text-[14px] font-[400] text-[#2E302E]">
-            Input the amount you want to loan aver a period of time and view
+            Input the amount you want to loan over a period of time and view
             your repayment amount.
           </p>
 
@@ -33,7 +39,10 @@ const Step1 = (props: any) => {
               value={p.form.formData.loanAmount}
               placeholder="How much do you want to loan?"
               label={"Loan Amount"}
-              onChange={p.form.handleChange}
+              onChange={(e) => {
+                p.form.handleChange(e);
+                props.p.handleChange(e);
+              }}
               validation={p.form.validationSchema?.loanAmount}
               validationTrigger={p.form.validationError}
             />
@@ -43,7 +52,10 @@ const Step1 = (props: any) => {
               name={p.form.fieldNames.loanPurpose}
               value={p.form.formData.loanPurpose}
               options={p.loanPurposeOptions}
-              onChange={p.form.handleChange}
+              onChange={(e) => {
+                p.form.handleChange(e);
+                props.p.handleChange(e);
+              }}
               validation={p.form.validationSchema?.loanPurpose}
               validationTrigger={p.form.validationError}
             />
@@ -51,11 +63,14 @@ const Step1 = (props: any) => {
             <SelectInput
               label="Duration"
               placeholder="Select Duration"
-              name={p.form.fieldNames.duration}
-              value={p.form.formData.duration}
+              name={p.form.fieldNames.durationInMonths}
+              value={p.form.formData.durationInMonths}
               options={p.loanDurationOptions}
-              onChange={p.form.handleChange}
-              validation={p.form.validationSchema?.duration}
+              onChange={(e) => {
+                p.form.handleChange(e);
+                props.p.handleChange(e);
+              }}
+              validation={p.form.validationSchema?.durationInMonths}
               validationTrigger={p.form.validationError}
             />
             {!p.isFormEmpty && (

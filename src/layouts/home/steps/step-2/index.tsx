@@ -35,7 +35,10 @@ const Step2 = (props: any) => {
                 value={h.form.formData.firstName}
                 placeholder="Enter First Name"
                 label={"First Name"}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.firstName}
                 validationTrigger={h.form.validationError}
               />
@@ -44,7 +47,10 @@ const Step2 = (props: any) => {
                 value={h.form.formData.lastName}
                 placeholder="Enter Last Name"
                 label={"Last Name"}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.lastName}
                 validationTrigger={h.form.validationError}
               />
@@ -55,7 +61,10 @@ const Step2 = (props: any) => {
                 placeholder="Day"
                 name={h.form.fieldNames.dayOfBirth}
                 value={h.form.formData.dayOfBirth}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.dayOfBirth}
                 validationTrigger={h.form.validationError}
                 options={h.dayOptions}
@@ -65,7 +74,10 @@ const Step2 = (props: any) => {
                 placeholder="Month"
                 name={h.form.fieldNames.monthOfBirth}
                 value={h.form.formData.monthOfBirth}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.monthOfBirth}
                 validationTrigger={h.form.validationError}
                 options={h.monthOptions}
@@ -75,7 +87,10 @@ const Step2 = (props: any) => {
                 placeholder="Year"
                 name={h.form.fieldNames.yearOfBirth}
                 value={h.form.formData.yearOfBirth}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.yearOfBirth}
                 validationTrigger={h.form.validationError}
                 options={h.yearOptions}
@@ -88,7 +103,10 @@ const Step2 = (props: any) => {
                 placeholder="Select Gender"
                 name={h.form.fieldNames.gender}
                 value={h.form.formData.gender}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.gender}
                 validationTrigger={h.form.validationError}
                 options={h.genderOptions}
@@ -98,7 +116,10 @@ const Step2 = (props: any) => {
                 placeholder="Select Status"
                 name={h.form.fieldNames.maritalStatus}
                 value={h.form.formData.maritalStatus}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.maritalStatus}
                 validationTrigger={h.form.validationError}
                 options={h.maritalStatusOptions}
@@ -109,10 +130,13 @@ const Step2 = (props: any) => {
               <SelectInput
                 label="Means of Identification"
                 placeholder="Select means of identification"
-                name={h.form.fieldNames.identification}
-                value={h.form.formData.identification}
-                onChange={h.form.handleChange}
-                validation={h.form.validationSchema?.identification}
+                name={h.form.fieldNames.idType}
+                value={h.form.formData.idType}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
+                validation={h.form.validationSchema?.idType}
                 validationTrigger={h.form.validationError}
                 options={h.identificationOptions}
               />
@@ -121,7 +145,10 @@ const Step2 = (props: any) => {
                 placeholder="Enter Id number"
                 name={h.form.fieldNames.documentId}
                 value={h.form.formData.documentId}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                h.form.handleChange(e)
+                props.p.handleChange(e)
+              }}
                 validation={h.form.validationSchema?.documentId}
                 validationTrigger={h.form.validationError}
               />

@@ -3,15 +3,21 @@ import { Button } from "../../../../components/buttons/Buttons";
 import { TextInput } from "../../../../components/Inputs/TextInput";
 import SelectInput from "../../../../components/selects/select-input/SelectInput";
 import { useStepFiveChunk } from "./useStepFiveChunk.hook";
+import ProgressLoader from "../../../../components/Loader";
 
 const Step5 = (props: any) => {
   const h = useStepFiveChunk(props);
   return (
     <form onSubmit={h.form.handleSubmit}>
-      <div className="flex items-center justify-center mx-auto max-w-[1200px] w-full min-h-[80vh] p-4">
+      <div className="flex relative items-center justify-center mx-auto max-w-[1200px] w-full min-h-[80vh] p-4">
         <div
-          className={`md:w-[846px] w-full min-h-[516px] p-6 bg-white shadow-lg rounded-[20px] flex flex-col transition-transform duration-500 border border-[#D7D7D780]`}
+          className={`md:w-[846px] relative w-full min-h-[516px] p-6 bg-white shadow-lg rounded-[20px] flex flex-col transition-transform duration-500 border border-[#D7D7D780]`}
         >
+          {h.isLoading && (
+            <div className="absolute inset-0 w-full h-full z-30 backdrop-blur-xs rounded-md">
+              <ProgressLoader isLoading={h.isLoading} />
+            </div>
+          )}
           <h1 className="text-[24px] text-[#083B0B] font-[600]">
             How do we pay you?
           </h1>
@@ -33,7 +39,10 @@ const Step5 = (props: any) => {
               value={h.form.formData.bvn}
               label="Bank verification number (BVN)"
               placeholder={"Enter BVN"}
-              onChange={h.form.handleChange}
+              onChange={(e) => {
+                h.form.handleChange(e);
+                props.p.handleChange(e);
+              }}
               validation={h.form.validationSchema?.bvn}
               validationTrigger={h.form.validationError}
             />
@@ -46,7 +55,10 @@ const Step5 = (props: any) => {
                 value={h.form.formData.accountNumber}
                 placeholder="Account Number"
                 label={"Enter Account Number"}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.accountNumber}
                 validationTrigger={h.form.validationError}
               />
@@ -55,7 +67,10 @@ const Step5 = (props: any) => {
                 placeholder="Select Bank"
                 name={h.form.fieldNames.bankName}
                 value={h.form.formData.bankName}
-                onChange={h.form.handleChange}
+                onChange={(e) => {
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.bankName}
                 validationTrigger={h.form.validationError}
                 options={h.nigeriaBankOptions}
@@ -70,7 +85,15 @@ const Step5 = (props: any) => {
                 className="checked:border-amber-600 mt-3"
                 name={h.form.fieldNames.acceptTerms}
                 checked={h.form.formData.acceptTerms || false}
-                onChange={(e) => h.form.handleChange({field : h.form.fieldNames.acceptTerms, value : e.target.checked.toString()})}
+                onChange={(e: any) =>
+                  // h.form.handleChange({
+                  //   field: h.form.fieldNames.acceptTerms,
+                  //   value: e.target.checked as any,
+                  // })
+                  {
+                    console.log(e);
+                  }
+                }
               />
               <p className="text-[14px] font-[400] text-[#2E302E]">
                 By proceeding, you agree to our Terms and Conditions, authorise
