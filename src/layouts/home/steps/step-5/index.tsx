@@ -3,7 +3,7 @@ import { Button } from "../../../../components/buttons/Buttons";
 import { TextInput } from "../../../../components/Inputs/TextInput";
 import SelectInput from "../../../../components/selects/select-input/SelectInput";
 import { useStepFiveChunk } from "./useStepFiveChunk.hook";
-import ProgressLoader from "../../../../components/Loader";
+import Loader from "../../../../assets/loader.gif";
 
 const Step5 = (props: any) => {
   const h = useStepFiveChunk(props);
@@ -14,8 +14,21 @@ const Step5 = (props: any) => {
           className={`md:w-[846px] relative w-full min-h-[516px] p-6 bg-white shadow-lg rounded-[20px] flex flex-col transition-transform duration-500 border border-[#D7D7D780]`}
         >
           {h.isLoading && (
-            <div className="absolute inset-0 w-full h-full z-30 backdrop-blur-xs rounded-md">
-              <ProgressLoader isLoading={h.isLoading} />
+            /* <div className="absolute inset-0 w-full h-full z-30 backdrop-blur-xs rounded-md">
+               <ProgressLoader isLoading={h.isLoading} /> 
+            </div> */
+            <div className="absolute flex justify-center items-center flex-col inset-0 w-full h-full z-30 bg-white rounded-md">
+              {/* <ProgressLoader isLoading={h.isLoading} /> */}
+              <img src={Loader} className="w-[300px] h-[300px]" />
+              <h3 className="text-[#083B0B] font-[600] text-[24px]">
+                Your loan is processing
+              </h3>
+              <p className="text-[14px] font-[400] text-[#2E302E]">
+                We are trying to verify your personal and financial informations
+                before we proceed to giving you a loan
+              </p>
+
+              <button className="text-[16px] mt-6 font-[500] text-[#14961D]">Cancel</button>
             </div>
           )}
           <h1 className="text-[24px] text-[#083B0B] font-[600]">
