@@ -36,9 +36,9 @@ const Step2 = (props: any) => {
                 placeholder="Enter First Name"
                 label={"First Name"}
                 onChange={(e) => {
-                h.form.handleChange(e)
-                props.p.handleChange(e)
-              }}
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.firstName}
                 validationTrigger={h.form.validationError}
               />
@@ -48,9 +48,9 @@ const Step2 = (props: any) => {
                 placeholder="Enter Last Name"
                 label={"Last Name"}
                 onChange={(e) => {
-                h.form.handleChange(e)
-                props.p.handleChange(e)
-              }}
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.lastName}
                 validationTrigger={h.form.validationError}
               />
@@ -62,9 +62,9 @@ const Step2 = (props: any) => {
                 name={h.form.fieldNames.dayOfBirth}
                 value={h.form.formData.dayOfBirth}
                 onChange={(e) => {
-                h.form.handleChange(e)
-                props.p.handleChange(e)
-              }}
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.dayOfBirth}
                 validationTrigger={h.form.validationError}
                 options={h.dayOptions}
@@ -75,9 +75,9 @@ const Step2 = (props: any) => {
                 name={h.form.fieldNames.monthOfBirth}
                 value={h.form.formData.monthOfBirth}
                 onChange={(e) => {
-                h.form.handleChange(e)
-                props.p.handleChange(e)
-              }}
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.monthOfBirth}
                 validationTrigger={h.form.validationError}
                 options={h.monthOptions}
@@ -88,9 +88,9 @@ const Step2 = (props: any) => {
                 name={h.form.fieldNames.yearOfBirth}
                 value={h.form.formData.yearOfBirth}
                 onChange={(e) => {
-                h.form.handleChange(e)
-                props.p.handleChange(e)
-              }}
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.yearOfBirth}
                 validationTrigger={h.form.validationError}
                 options={h.yearOptions}
@@ -104,9 +104,9 @@ const Step2 = (props: any) => {
                 name={h.form.fieldNames.gender}
                 value={h.form.formData.gender}
                 onChange={(e) => {
-                h.form.handleChange(e)
-                props.p.handleChange(e)
-              }}
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.gender}
                 validationTrigger={h.form.validationError}
                 options={h.genderOptions}
@@ -117,9 +117,9 @@ const Step2 = (props: any) => {
                 name={h.form.fieldNames.maritalStatus}
                 value={h.form.formData.maritalStatus}
                 onChange={(e) => {
-                h.form.handleChange(e)
-                props.p.handleChange(e)
-              }}
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.maritalStatus}
                 validationTrigger={h.form.validationError}
                 options={h.maritalStatusOptions}
@@ -133,9 +133,9 @@ const Step2 = (props: any) => {
                 name={h.form.fieldNames.idType}
                 value={h.form.formData.idType}
                 onChange={(e) => {
-                h.form.handleChange(e)
-                props.p.handleChange(e)
-              }}
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.idType}
                 validationTrigger={h.form.validationError}
                 options={h.identificationOptions}
@@ -146,9 +146,9 @@ const Step2 = (props: any) => {
                 name={h.form.fieldNames.documentId}
                 value={h.form.formData.documentId}
                 onChange={(e) => {
-                h.form.handleChange(e)
-                props.p.handleChange(e)
-              }}
+                  h.form.handleChange(e);
+                  props.p.handleChange(e);
+                }}
                 validation={h.form.validationSchema?.documentId}
                 validationTrigger={h.form.validationError}
               />

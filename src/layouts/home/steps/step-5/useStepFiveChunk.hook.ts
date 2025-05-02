@@ -3,9 +3,16 @@ import { useForm } from "../../../../utils/hooks/useForm.hook";
 import { ListItem } from "../../../../utils/types/index.types";
 import { useState } from "react";
 import axios from "axios";
+import { AlertProps } from "../../../../components/alerts/Alert";
 
 export const useStepFiveChunk = (props: any) => {
   const [isLoading, setIsLoading] = useState(false);
+  const [message, setMessage] = useState<AlertProps>({
+    type: "pending",
+    message: "",
+    title: "",
+    visible: false,
+  });
   const nigeriaBankOptions: ListItem[] = [
     { id: "access_bank", name: "Access Bank" },
     { id: "citibank", name: "Citibank Nigeria" },
@@ -35,9 +42,9 @@ export const useStepFiveChunk = (props: any) => {
 
   const form = useForm({
     initialFormData: {
-      bvn: "",
-      bankName: "",
-      accountNumber: "",
+      bvn: props.p.application.bvn || "",
+      bankName: props.p.application.bankName || "",
+      accountNumber: props.p.application.accountNumber || "",
       acceptTerms: true,
     },
     validationSchema: z.object({
@@ -69,10 +76,22 @@ export const useStepFiveChunk = (props: any) => {
           }
         );
 
-        console.log("Submission successful:", response.data);
+        setMessage({
+          type: "success",
+          message: response.data.message,
+          title: "Success",
+          visible: true,
+        });
+
+        window.location.href = "/status/"+response.data.data.loanId;
       } catch (error) {
         console.error("Submission failed:", error);
-        // Handle error (show error message, etc.)
+        setMessage({
+          type: "error",
+          message: "An error occurred while submitting the form.",
+          title: "Error",
+          visible: true,
+        });
       } finally {
         setIsLoading(false);
       }
@@ -90,5 +109,6 @@ export const useStepFiveChunk = (props: any) => {
     handlePrevious,
     nigeriaBankOptions,
     isLoading,
+    message,
   };
 };

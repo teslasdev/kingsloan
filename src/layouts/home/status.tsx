@@ -1,13 +1,33 @@
 import { Button } from "../../components/buttons/Buttons";
 import Layout from "../Layout";
+import Success from "../../assets/success.gif";
+import { useHomeChunk } from "./HomeChunk.hook";
 
 const Status = () => {
+  const p = useHomeChunk();
   return (
     <Layout>
       <div className="flex items-center justify-center mx-auto max-w-[1200px] w-full min-h-[80vh] p-4">
         <div
           className={`md:w-[846px] relative w-full min-h-[516px] p-6 bg-white shadow-lg rounded-[20px] flex flex-col transition-transform duration-500 border border-[#D7D7D780]`}
         >
+          {p.takeLoan && (
+            <div className="absolute flex justify-center items-center flex-col inset-0 w-full h-full z-30 bg-white rounded-md">
+              {/* <ProgressLoader isLoading={h.isLoading} /> */}
+              <img src={Success} className="w-[300px] h-[300px]" />
+              <h3 className="text-[#083B0B] font-[600] text-[24px]">
+                Loan Disbursed
+              </h3>
+              <p className="text-[14px] font-[400] text-[#2E302E]">
+                Your loan has been disbursed to your local bank account.
+              </p>
+
+              <button className="text-[16px] mt-6 font-[500] text-[#14961D]">
+                <a href={"/"}>Cancel</a>
+              </button>
+            </div>
+          )}
+
           <h1 className="text-[24px] text-[#083B0B] font-[600]">
             Your loan limit is ready
           </h1>
@@ -83,14 +103,16 @@ const Status = () => {
                 <p>Rollover fee</p>
               </div>
             </div>
-
           </div>
-          
+
           <div className="flex items-center w-full justify-end">
-              <Button className={"w-[200px] h-[52px] cursor-pointer"}>
-                Take Loan
-              </Button>
-            </div>
+            <Button
+              onClick={() => p.setTakeLoan(true)}
+              className={"w-[200px] h-[52px] cursor-pointer"}
+            >
+              Take Loan
+            </Button>
+          </div>
         </div>
       </div>
     </Layout>

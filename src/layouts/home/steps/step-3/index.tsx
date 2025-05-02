@@ -95,7 +95,10 @@ const Step3 = (props: any) => {
                   placeholder="Enter First Name"
                   name={h.form.fieldNames.referee1firstName}
                   value={h.form.formData.referee1firstName}
-                  onChange={h.form.handleChange}
+                  onChange={(e) => {
+                    h.form.handleChange(e);
+                    props.p.handleChange(e);
+                  }}
                   validation={h.form.validationSchema?.referee1firstName}
                   validationTrigger={h.form.validationError}
                 />
@@ -104,7 +107,10 @@ const Step3 = (props: any) => {
                   placeholder="Enter Last Name"
                   name={h.form.fieldNames.referee1lastName}
                   value={h.form.formData.referee1lastName}
-                  onChange={h.form.handleChange}
+                  onChange={(e) => {
+                    h.form.handleChange(e);
+                    props.p.handleChange(e);
+                  }}
                   validation={h.form.validationSchema?.referee1firstName}
                   validationTrigger={h.form.validationError}
                 />
@@ -116,9 +122,13 @@ const Step3 = (props: any) => {
                   placeholder="Select Relationship"
                   name={h.form.fieldNames.referee1Relationship}
                   value={h.form.formData.referee1Relationship}
-                  onChange={(e : InputChangePayload) => {
+                  onChange={(e: InputChangePayload) => {
                     h.form.handleChange(e);
-                    props.p.handleRefereeChange(0 , { field :  "relationship" , value : e.value });
+                    props.p.handleChange(e);
+                    props.p.handleRefereeChange(0, {
+                      field: "relationship",
+                      value: e.value,
+                    });
                   }}
                   validation={h.form.validationSchema?.referee1Relationship}
                   validationTrigger={h.form.validationError}
@@ -129,9 +139,13 @@ const Step3 = (props: any) => {
                   placeholder="Enter Phone number"
                   name={h.form.fieldNames.referee1PhoneNumber}
                   value={h.form.formData.referee1PhoneNumber}
-                  onChange={(e : InputChangePayload) => {
+                  onChange={(e: InputChangePayload) => {
                     h.form.handleChange(e);
-                    props.p.handleRefereeChange(0 , { field :  "phoneNumber" , value : e.value });
+                    props.p.handleChange(e);
+                    props.p.handleRefereeChange(0, {
+                      field: "phoneNumber",
+                      value: e.value,
+                    });
                   }}
                   validation={h.form.validationSchema?.referee1PhoneNumber}
                   validationTrigger={h.form.validationError}
@@ -149,7 +163,10 @@ const Step3 = (props: any) => {
                   placeholder="Enter First Name"
                   name={h.form.fieldNames.referee2firstName}
                   value={h.form.formData.referee2firstName}
-                  onChange={h.form.handleChange}
+                  onChange={(e) => {
+                    h.form.handleChange(e);
+                    props.p.handleChange(e);
+                  }}
                   validation={h.form.validationSchema?.referee2firstName}
                   validationTrigger={h.form.validationError}
                 />
@@ -158,7 +175,10 @@ const Step3 = (props: any) => {
                   placeholder="Enter Last Name"
                   name={h.form.fieldNames.referee2lastName}
                   value={h.form.formData.referee2lastName}
-                  onChange={h.form.handleChange}
+                  onChange={(e) => {
+                    h.form.handleChange(e);
+                    props.p.handleChange(e);
+                  }}
                   validation={h.form.validationSchema?.referee2lastName}
                   validationTrigger={h.form.validationError}
                 />
@@ -170,9 +190,13 @@ const Step3 = (props: any) => {
                   placeholder="Select Relationship"
                   name={h.form.fieldNames.referee2Relationship}
                   value={h.form.formData.referee2Relationship}
-                  onChange={(e : InputChangePayload) => {
+                  onChange={(e: InputChangePayload) => {
                     h.form.handleChange(e);
-                    props.p.handleRefereeChange(1 , { field :  "relationship" , value : e.value });
+                    props.p.handleChange(e);
+                    props.p.handleRefereeChange(1, {
+                      field: "relationship",
+                      value: e.value,
+                    });
                   }}
                   validation={h.form.validationSchema?.referee2Relationship}
                   validationTrigger={h.form.validationError}
@@ -183,9 +207,13 @@ const Step3 = (props: any) => {
                   placeholder="Enter Phone number"
                   name={h.form.fieldNames.referee2PhoneNumber}
                   value={h.form.formData.referee2PhoneNumber}
-                  onChange={(e : InputChangePayload) => {
+                  onChange={(e: InputChangePayload) => {
                     h.form.handleChange(e);
-                    props.p.handleRefereeChange(1 , { field :  "phoneNumber" , value : e.value });
+                    props.p.handleChange(e);
+                    props.p.handleRefereeChange(1, {
+                      field: "phoneNumber",
+                      value: e.value,
+                    });
                   }}
                   validation={h.form.validationSchema?.referee2PhoneNumber}
                   validationTrigger={h.form.validationError}

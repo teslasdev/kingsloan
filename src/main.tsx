@@ -11,7 +11,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <Provider store={store}>
   <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/status" element={<Status />} />
+      <Route path="/status/:id" element={<Status />} />
     </Routes>
     </Provider>
   </BrowserRouter>

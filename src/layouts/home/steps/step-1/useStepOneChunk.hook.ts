@@ -53,9 +53,9 @@ export const useStepOneChunk = (props: any) => {
 
   const form = useForm({
     initialFormData: {
-      loanAmount: "",
-      loanPurpose: "",
-      durationInMonths: "",
+      loanAmount: props.p.application.loanAmount || "",
+      loanPurpose: props.p.application.loanPurpose || "",
+      durationInMonths: props.p.application.durationInMonths || "",
     },
     validationSchema: z.object({
       loanAmount: z.string().min(1, { message: "Loan amount is required" }),
@@ -64,10 +64,7 @@ export const useStepOneChunk = (props: any) => {
     }),
     async onSubmit(formData) {
       setIsLoading(true);
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 20000);
-      console.table(formData);
+      console.log(formData);
       props.p.setStep(props.p.step + 1);
     },
   });

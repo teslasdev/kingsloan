@@ -34,15 +34,17 @@ export const useStepTwoChunk = (props: any) => {
       id: "female",
       name: "Female",
     },
+    {
+      id: "other",
+      name: "Other",
+    },
   ];
 
   const maritalStatusOptions: ListItem[] = [
     { id: "single", name: "Single" },
     { id: "married", name: "Married" },
     { id: "divorced", name: "Divorced" },
-    { id: "widowed", name: "Widowed" },
-    { id: "seperated", name: "Separated" },
-    { id: "domestic_parternship", name: "Domestic Partnership" },
+    { id: "widowed", name: "Widowed" }
   ];
 
   const identificationOptions: ListItem[] = [
@@ -53,15 +55,15 @@ export const useStepTwoChunk = (props: any) => {
 
   const form = useForm({
     initialFormData: {
-      firstName: "",
-      lastName: "",
-      dayOfBirth: "",
-      monthOfBirth: "",
-      yearOfBirth: "",
-      gender: "",
-      maritalStatus: "",
-      idType: "",
-      documentId: "",
+      firstName: props.p.application.firstName || "",
+      lastName: props.p.application.lastName || "",
+      dayOfBirth: props.p.application.dayOfBirth || "",
+      monthOfBirth: props.p.application.monthOfBirth || "",
+      yearOfBirth: props.p.application.yearOfBirth || "",
+      gender: props.p.application.gender || "",
+      maritalStatus: props.p.application.maritalStatus || "",
+      idType: props.p.application.idType || "",
+      documentId: props.p.application.documentId || "",
     },
     validationSchema: z.object({
       firstName: z.string().min(1, { message: "First name is required" }),

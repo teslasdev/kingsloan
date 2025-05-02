@@ -4,20 +4,19 @@ import { ListItem } from "../../../../utils/types/index.types";
 
 export const useStepFourChunk = (props: any) => {
   const jobApplicationStatusOptions: ListItem[] = [
-    { id: "employed_seeking", name: "Employed (Seeking New Opportunities)" },
-    { id: "employed_not_seeking", name: "Employed (Not Seeking)" },
-    { id: "unemployed_seeking", name: "Unemployed (Actively Seeking)" },
-    { id: "unemployed_not_seeking", name: "Unemployed (Not Seeking)" },
-    { id: "student_seeking", name: "Student (Seeking Employment)" },
-    { id: "returning_workforce", name: "Returning to Workforce" },
+    { id: "employed", name: "Employed" },
+    { id: "self_employed", name: "Self Employed" },
+    { id: "unemployed", name: "Unemployed" },
+    { id: "student", name: "Student" },
+    { id: "retired", name: "Retired" },
   ];
   const form = useForm({
     initialFormData: {
-      employmentStatus: "",
-      companyName: "",
-      businessName: "",
-      role: "",
-      workEmail: "",
+      employmentStatus: props.p.application.employmentStatus || "",
+      companyName: props.p.application.companyName || "",
+      businessName: props.p.application.businessName || "",
+      role: props.p.application.role || "",
+      workEmail: props.p.application.workEmail || "",
     },
     validationSchema: z.object({
       employmentStatus: z.string().nonempty("Employment status is required"),

@@ -8,6 +8,7 @@ const Step1 = (props: any) => {
   const p = useStepOneChunk(props);
   return (
     <form onSubmit={p.form.handleSubmit}>
+      
       <div className="flex items-center justify-center mx-auto max-w-[1200px] w-full min-h-[80vh] p-4">
         <div
           className={`md:w-[846px] relative w-full min-h-[516px] p-6 bg-white shadow-lg rounded-[20px] flex flex-col transition-transform duration-500 border border-[#D7D7D780]`}
@@ -36,7 +37,7 @@ const Step1 = (props: any) => {
           <div className="flex flex-col gap-4">
             <TextInput
               name={p.form.fieldNames.loanAmount}
-              value={p.form.formData.loanAmount}
+              value={p.form.formData.loanAmount || props.p.application.loanAmount || ""}
               placeholder="How much do you want to loan?"
               label={"Loan Amount"}
               onChange={(e) => {
@@ -50,7 +51,7 @@ const Step1 = (props: any) => {
               label="Loan purpose"
               placeholder="Select loan purpose"
               name={p.form.fieldNames.loanPurpose}
-              value={p.form.formData.loanPurpose}
+              value={p.form.formData.loanPurpose || props.p.application.loanPurpose || ""}
               options={p.loanPurposeOptions}
               onChange={(e) => {
                 p.form.handleChange(e);
@@ -64,7 +65,7 @@ const Step1 = (props: any) => {
               label="Duration"
               placeholder="Select Duration"
               name={p.form.fieldNames.durationInMonths}
-              value={p.form.formData.durationInMonths}
+              value={p.form.formData.durationInMonths || props.p.application.durationInMonths || ""}
               options={p.loanDurationOptions}
               onChange={(e) => {
                 p.form.handleChange(e);

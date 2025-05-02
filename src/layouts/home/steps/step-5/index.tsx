@@ -4,6 +4,7 @@ import { TextInput } from "../../../../components/Inputs/TextInput";
 import SelectInput from "../../../../components/selects/select-input/SelectInput";
 import { useStepFiveChunk } from "./useStepFiveChunk.hook";
 import Loader from "../../../../assets/loader.gif";
+import Alert from "../../../../components/alerts/Alert";
 
 const Step5 = (props: any) => {
   const h = useStepFiveChunk(props);
@@ -28,7 +29,9 @@ const Step5 = (props: any) => {
                 before we proceed to giving you a loan
               </p>
 
-              <button className="text-[16px] mt-6 font-[500] text-[#14961D]">Cancel</button>
+              <button className="text-[16px] mt-6 font-[500] text-[#14961D]">
+                Cancel
+              </button>
             </div>
           )}
           <h1 className="text-[24px] text-[#083B0B] font-[600]">
@@ -45,8 +48,15 @@ const Step5 = (props: any) => {
             <div className="bg-[#FFCC00] w-[145.2px] h-[8px] rounded-[100px]" />
             <div className="bg-[#FFCC00] w-[145.2px] h-[8px] rounded-[100px]" />
           </div>
+          {h.message.visible && (
+          <Alert
+            type={h.message.type}
+            title={h.message.title}
+            message={h.message.message}
+          />
+          )}
 
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4 mt-2">
             <TextInput
               name={h.form.fieldNames.bvn}
               value={h.form.formData.bvn}
