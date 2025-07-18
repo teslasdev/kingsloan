@@ -33,13 +33,13 @@ export function TextInput(props: TextInputProps) {
     <div ref={parentRef} className="w-full">
       <label
         htmlFor={name}
-        className="flex items-center justify-between text-sm font-semibold text text-[#083B0B] gap-2 mb-2"
+        className="flex items-center justify-between text-sm font-semibold text text-[#002266] gap-2 mb-2"
       >
         {props.label}
       </label>
       <div
         className={
-          `relative h-[60px] rounded-xl border bg-accent-6 bg-opacity-30 text-sm overflow-hidden flex items-center ${props.value ? 'border-[#14961D80]' : 'border-[#D7D7D7]'}`
+          `relative h-[60px] rounded-xl border bg-accent-6 bg-opacity-30 text-sm overflow-hidden flex items-center ${props.value ? 'border-[#ffae0073]' : 'border-[#D7D7D7]'}`
         }
       >
         {iconLeft && (
@@ -53,7 +53,7 @@ export function TextInput(props: TextInputProps) {
         )}
         <input
           {...inputProps}
-          className={`block px-5 w-full h-full disabled:cursor-not-allowed disabled:opacity-70 disabled:bg-stone-100 text-ellipsis bg-transparent placeholder:font-[500] placeholder:text-[#2E302E] opacity-50 text-[#000000] ${
+          className={`block px-5 w-full h-full disabled:cursor-not-allowed disabled:opacity-70 disabled:bg-stone-100 text-ellipsis bg-transparent placeholder:font-[500] placeholder:text-[#002266] opacity-50 text-[#000000] ${
             disabled ? "text-[#B5B5B5]" : ""
           } `}
           type={inputType}

@@ -4,7 +4,7 @@ export const Button = ({ className, ...props }: { className?: string; [key: stri
   return (
     <button
       className={cn(
-        "bg-[#14961D] text-white px-4 py-2 rounded-full hover:bg-[#14961D] transition duration-300 ease-in-out",
+        "bg-[#FFAF00] text-black px-4 py-2 rounded-full hover:bg-[#ffae0073] transition duration-300 ease-in-out",
         className
       )}
       {...props}

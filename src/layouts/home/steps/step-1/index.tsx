@@ -18,10 +18,10 @@ const Step1 = (props: any) => {
               <ProgressLoader isLoading={p.isLoading} />
             </div>
           )}
-          <h1 className="text-[24px] text-[#083B0B] font-[600]">
+          <h1 className="text-[24px] text-[#002266] font-[600]">
             How much do you want to loan?
           </h1>
-          <p className="text-[14px] font-[400] text-[#2E302E]">
+          <p className="text-[14px] font-[400] text-[#002266]">
             Input the amount you want to loan over a period of time and view
             your repayment amount.
           </p>
@@ -75,19 +75,19 @@ const Step1 = (props: any) => {
               validationTrigger={p.form.validationError}
             />
             {!p.isFormEmpty && (
-              <div className="bg-[#F6FEF7] p-6 flex justify-between items-center">
+              <div className="bg-[#94b3eb83] p-6 flex justify-between items-center">
                 <div>
-                  <h4 className="font-[600] text-[#083B0B] text-[20px]">10%</h4>
+                  <h4 className="font-[600] text-black text-[20px]">10%</h4>
                   <p>Interest rate</p>
                 </div>
                 <div>
-                  <h4 className="font-[600] text-[#083B0B] text-[20px]">
+                  <h4 className="font-[600] text-black text-[20px]">
                     NGN {p?.calcInt.toLocaleString()}
                   </h4>
                   <p>Interest on loan</p>
                 </div>
                 <div>
-                  <h4 className="font-[600] text-[#083B0B] text-[20px]">
+                  <h4 className="font-[600] text-black text-[20px]">
                     NGN {p?.repaymentAmount.toLocaleString()}
                   </h4>
                   <p>Repayment Amount</p>

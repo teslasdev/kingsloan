@@ -12,10 +12,10 @@ const Step2 = (props: any) => {
         <div
           className={`md:w-[846px] w-full min-h-[516px] p-6 bg-white shadow-lg rounded-[20px] flex flex-col transition-transform duration-500 border border-[#D7D7D780]`}
         >
-          <h1 className="text-[24px] text-[#083B0B] font-[600]">
+          <h1 className="text-[24px] text-[#002266] font-[600]">
             Tell us about yourself
           </h1>
-          <p className="text-[14px] font-[400] text-[#2E302E]">
+          <p className="text-[14px] font-[400] text-[#002266]">
             Give us proof that you exist with your names and a valid means of
             identification
           </p>
@@ -156,7 +156,7 @@ const Step2 = (props: any) => {
             <div className="flex items-center w-full justify-between">
               <Button
                 className={
-                  "flex items-center gap-4 text-[#083B0B] hover:text-white bg-transparent h-[52px] cursor-pointer"
+                  "flex items-center gap-4 text-[#002266] hover:text-white bg-transparent h-[52px] cursor-pointer"
                 }
                 onClick={h.handlePrevious}
               >

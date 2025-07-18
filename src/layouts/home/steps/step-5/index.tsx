@@ -21,10 +21,10 @@ const Step5 = (props: any) => {
             <div className="absolute flex justify-center items-center flex-col inset-0 w-full h-full z-30 bg-white rounded-md">
               {/* <ProgressLoader isLoading={h.isLoading} /> */}
               <img src={Loader} className="w-[300px] h-[300px]" />
-              <h3 className="text-[#083B0B] font-[600] text-[24px]">
+              <h3 className="text-[#002266] font-[600] text-[24px]">
                 Your loan is processing
               </h3>
-              <p className="text-[14px] font-[400] text-[#2E302E]">
+              <p className="text-[14px] font-[400] text-[#002266]">
                 We are trying to verify your personal and financial informations
                 before we proceed to giving you a loan
               </p>
@@ -34,10 +34,10 @@ const Step5 = (props: any) => {
               </button>
             </div>
           )}
-          <h1 className="text-[24px] text-[#083B0B] font-[600]">
+          <h1 className="text-[24px] text-[#002266] font-[600]">
             How do we pay you?
           </h1>
-          <p className="text-[14px] font-[400] text-[#2E302E]">
+          <p className="text-[14px] font-[400] text-[#002266]">
             Provide your BVN and a bank details connected to your BVN
           </p>
 
@@ -118,7 +118,7 @@ const Step5 = (props: any) => {
                   }
                 }
               />
-              <p className="text-[14px] font-[400] text-[#2E302E]">
+              <p className="text-[14px] font-[400] text-[#002266]">
                 By proceeding, you agree to our Terms and Conditions, authorise
                 us to verify your personal and financial information, understand
                 that loan approval is subject to eligibility and credit
@@ -131,7 +131,7 @@ const Step5 = (props: any) => {
             <div className="flex items-center w-full justify-between">
               <Button
                 className={
-                  "flex items-center gap-4 text-[#083B0B] hover:text-white bg-transparent h-[52px] cursor-pointer"
+                  "flex items-center gap-4 text-[#002266] hover:text-white bg-transparent h-[52px] cursor-pointer"
                 }
                 onClick={h.handlePrevious}
               >

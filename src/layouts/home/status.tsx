@@ -15,10 +15,10 @@ const Status = () => {
             <div className="absolute flex justify-center items-center flex-col inset-0 w-full h-full z-30 bg-white rounded-md">
               {/* <ProgressLoader isLoading={h.isLoading} /> */}
               <img src={Success} className="w-[300px] h-[300px]" />
-              <h3 className="text-[#083B0B] font-[600] text-[24px]">
+              <h3 className="text-[#002266] font-[600] text-[24px]">
                 Loan Disbursed
               </h3>
-              <p className="text-[14px] font-[400] text-[#2E302E]">
+              <p className="text-[14px] font-[400] text-[#002266]">
                 Your loan has been disbursed to your local bank account.
               </p>
 
@@ -28,10 +28,10 @@ const Status = () => {
             </div>
           )}
 
-          <h1 className="text-[24px] text-[#083B0B] font-[600]">
+          <h1 className="text-[24px] text-[#002266] font-[600]">
             Your loan limit is ready
           </h1>
-          <p className="text-[14px] font-[400] text-[#2E302E]">
+          <p className="text-[14px] font-[400] text-[#002266]">
             Your loan limit has been calculated and below is the amount
             available for disbursement..
           </p>
@@ -39,25 +39,25 @@ const Status = () => {
           <div className="bg-[#F6FEF7] p-2 flex justify-between my-4 px-4 items-center">
             <div className="flex items-center gap-8">
               <div>
-                <h2 className="text-[20px] text-[#083B0B] font-[600]">
+                <h2 className="text-[20px] text-[#002266] font-[600]">
                   NGN 20,000
                 </h2>
                 <p>Amount loanable</p>
               </div>
               <div>
-                <h2 className="text-[20px] text-[#083B0B] font-[600]">15%</h2>
+                <h2 className="text-[20px] text-[#002266] font-[600]">15%</h2>
                 <p>Interest Rate</p>
               </div>
             </div>
 
             <div>
-              <h2 className="text-[20px] text-[#083B0B] font-[600]">
+              <h2 className="text-[20px] text-[#002266] font-[600]">
                 NGN 2,000
               </h2>
               <p>Interest on loan</p>
             </div>
             <div>
-              <h2 className="text-[20px] text-[#083B0B] font-[600]">
+              <h2 className="text-[20px] text-[#002266] font-[600]">
                 NGN 22,000
               </h2>
               <p>Repayment Amount</p>
@@ -68,38 +68,38 @@ const Status = () => {
             <p>Disbursing details</p>
             <div className="border border-[#D7D7D7] flex justify-between flex-wrap mt-1 p-4 gap-6 rounded-[12px]">
               <div className="w-[30%]">
-                <h2 className="text-[20px] text-[#083B0B] font-[600]">
+                <h2 className="text-[20px] text-[#002266] font-[600]">
                   7064422483
                 </h2>
                 <p>Account number</p>
               </div>
               <div className="w-[30%]">
-                <h2 className="text-[20px] text-[#083B0B] font-[600]">
+                <h2 className="text-[20px] text-[#002266] font-[600]">
                   Atoyebi Paul Wealth
                 </h2>
                 <p>Account Name</p>
               </div>
 
               <div className="w-[30%]">
-                <h2 className="text-[20px] text-[#083B0B] font-[600]">
+                <h2 className="text-[20px] text-[#002266] font-[600]">
                   Opay Digital Banking
                 </h2>
                 <p>Bank</p>
               </div>
               <div className="w-[30%]">
-                <h2 className="text-[20px] text-[#083B0B] font-[600]">
+                <h2 className="text-[20px] text-[#002266] font-[600]">
                   1 Month
                 </h2>
                 <p>Repayment duration</p>
               </div>
 
               <div className="w-[30%]">
-                <h2 className="text-[20px] text-[#083B0B] font-[600]">NGN 0</h2>
+                <h2 className="text-[20px] text-[#002266] font-[600]">NGN 0</h2>
                 <p>Discount</p>
               </div>
 
               <div className="w-[30%]">
-                <h2 className="text-[20px] text-[#083B0B] font-[600]">1%</h2>
+                <h2 className="text-[20px] text-[#002266] font-[600]">1%</h2>
                 <p>Rollover fee</p>
               </div>
             </div>
